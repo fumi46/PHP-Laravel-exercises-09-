@@ -7,6 +7,15 @@
     <title>編集</title>
 </head>
 <body>
+    <!-- layouts/profile.blade.php の読み込み-->
+    @extends('layouts.profile')
+    
+    <!--profile.blade.phpの@yield('title')に'プロフィール編集'の埋め込み-->
+    @section('title', 'プロフィール編集')
+    
+    <!-- profile.blade.phpの@yield('content')に以下の埋め込み-->
+    @section('content')
+
     <?php
     function name($last_neme, $family_name){
         return "名前:". $last_neme. $family_name. "です。";
@@ -19,5 +28,7 @@
     }
     echo age(1000000);
     ?>
+    
+    @endsection
 </body>
 </html>
