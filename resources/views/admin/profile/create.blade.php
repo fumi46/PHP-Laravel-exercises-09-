@@ -38,13 +38,13 @@
                             　　<select type="text" class="form-control" name="gender">
                                 <option value="n" selected>未選択</option>
                                 <option value="f">女</option>
-                                <option value="m">男</option>-->
+                                <option value="m">男</option>
+                                </select>-->
                                 
                             <!-- ボタン選択のとき -->
                                 <input id="non" name="gender" type="radio" value="1"><label for="non">未選択</label>
                                 <input id="female" name="gender" type="radio" value="2"> <label for="female">女</label>
                                 <input id="male" name="gender" type="radio" value="3"> <label for="male">男</label>
-                            </select>
                         </div>
                     </div>
                     <div class="form-group row">

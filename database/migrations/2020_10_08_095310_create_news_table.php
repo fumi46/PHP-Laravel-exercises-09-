@@ -18,6 +18,7 @@ class CreateNewsTable extends Migration
             $table->string('title');  // ニュースのタイトルを保存するカラム
             $table->string('body');   // ニュースの本文を保存するカラム
             $table->string('image_path') -> nullable();  // 画像のパスを保存するカラム。空でも可。
+            $table->string('image') -> nullable(); 
             $table->timestamps();
         });
     }

@@ -16,19 +16,24 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
-    Route::get('news/create', 'Admin\NewsController@add');     //画面表示のための指定。
-    Route::post('news/create', 'Admin\NewsController@create'); //フォーム送信した際のpost先（news/create)とメソッド(create)の指定。
+    Route::get('news/create', 'Admin\NewsController@add');     
+    Route::post('news/create', 'Admin\NewsController@create'); 
+    Route::get('news', 'Admin\NewsController@index');
+    Route::get('news/edit', 'Admin\NewsController@edit');
+    Route::post('news/edit', 'Admin\NewsController@update');
+    Route::get('news/delete', 'Admin\NewsController@delete');
 });
 
 //php09課題3
 Route::get('XXX', 'AAAController@bbb');
 
 //php09課題4 　php13課題3・6
-Route::group(['prefix'=>'admin'], function(){
-    Route::get('profile/create', 'Admin\Profilecontroller@add') -> middleware('auth');
-    Route::get('profile/edit', 'Admin\Profilecontroller@edit') -> middleware('auth');
+Route::group(['prefix'=>'admin','middleware' => 'auth' ], function(){
+    Route::get('profile/create', 'Admin\Profilecontroller@add') ;
     Route::post('profile/create', 'Admin\Profilecontroller@create'); 
+    Route::get('profile/edit', 'Admin\Profilecontroller@edit');
     Route::post('profile/edit', 'Admin\Profilecontroller@update');
+    Route::get('profile/delete', 'Admin\Profilecontroller@delete');
 });
 
 
