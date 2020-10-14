@@ -33,6 +33,7 @@ Route::group(['prefix'=>'admin','middleware' => 'auth' ], function(){
     Route::post('profile/create', 'Admin\Profilecontroller@create'); 
     Route::get('profile/edit', 'Admin\Profilecontroller@edit');
     Route::post('profile/edit', 'Admin\Profilecontroller@update');
+    Route::get('profile', 'Admin\Profilecontroller@index');
     Route::get('profile/delete', 'Admin\Profilecontroller@delete');
 });
 
