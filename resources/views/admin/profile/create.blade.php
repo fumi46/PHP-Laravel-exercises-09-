@@ -42,9 +42,9 @@
                                 </select>-->
                                 
                             <!-- ボタン選択のとき -->
-                                <input id="non" name="gender" type="radio" value="1"><label for="non">未選択</label>
-                                <input id="female" name="gender" type="radio" value="2"> <label for="female">女</label>
-                                <input id="male" name="gender" type="radio" value="3"> <label for="male">男</label>
+                                <input id="no" name="gender" type="radio" value="no choice"><label for="no">選択しない</label>
+                                <input id="female" name="gender" type="radio" value="female"> <label for="female">女</label>
+                                <input id="male" name="gender" type="radio" value="male"> <label for="male">男</label>
                         </div>
                     </div>
                     <div class="form-group row">

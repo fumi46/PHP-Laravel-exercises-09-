@@ -52,7 +52,7 @@
                     <div class="col-md-4 mx-auto">
                         <h2>編集履歴</h2>
                         <ul class="list-group">
-                            @if ($news_form->histories != NULL)
+                            @if ($news_form->histories != NULL)  <!-- update アクションで作成されたnews_form の中で編集履歴テーブル（histories）に該当がある場合。 -->
                                 @foreach ($news_form->histories as $history)
                                     <li class="list-group-item">{{ $history->edited_at }}</li>
                                 @endforeach

@@ -36,9 +36,9 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="gender">性別(gender)</label>
                         <div class="col-md-10">
-                            <input id="non" name="gender" type="radio" value="{{ $profile_form->gender }}"><label for="non">未選択</label>
-                            <input id="female" name="gender" type="radio" value="{{ $profile_form->gender }}"> <label for="female">女</label>
-                            <input id="male" name="gender" type="radio" value="{{ $profile_form->gender }}"> <label for="male">男</label>
+                            <input id="no" name="gender" type="radio" value="no choice"><label for="no">未選択</label>
+                            <input id="female" name="gender" type="radio" value="female"> <label for="female">女</label>
+                            <input id="male" name="gender" type="radio" value="male"> <label for="male">男</label>
                         </div>
                     </div>
                    <div class="form-group row">
@@ -65,7 +65,7 @@
                     <div class="col-md-4 mx-auto">
                         <h2>編集履歴</h2>
                         <ul class="list-group">
-                            @if ($profile_form->profilehistories != NULL)  <!-- テーブル名 -->
+                            @if ($profile_form->profilehistories != NULL)  <!-- テーブル名 --> <!-- update アクションで作成されたprofile_form の中で編集履歴テーブル（profilehistories）に該当がある場合。 -->
                                 @foreach ($profile_form->profilehistories as $profile_history)  <!-- テーブル名 -->
                                     <li class="list-group-item">{{ $profile_history->edited_at }}</li>
                                 @endforeach

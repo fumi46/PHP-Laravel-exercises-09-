@@ -15,7 +15,7 @@ class CreateProfilehistoriesTable extends Migration
     {                    // ↓テーブル名
         Schema::create('profilehistories', function (Blueprint $table) {  
             $table->increments('id');
-            $table->integer('profile_id');
+            $table->integer('profile_id'); //外部キー。単数形にする。
             $table->string('edited_at');
             
             $table->timestamps();

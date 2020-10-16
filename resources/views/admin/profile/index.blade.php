@@ -26,16 +26,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="list-profile col-md-12 mx-auto">
+            <div class="admin-profile col-md-12 mx-auto">
                 <div class="row">
                     <table class="table table-dark">
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">名前</th>
-                                <th width="20%">性別</th>
+                                <th width="10%">名前</th>
+                                <th width="10%">性別</th>
                                 <th width="20%">趣味</th>
-                                <th width="50%">自己紹介</th>
+                                <th width="40%">自己紹介</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,8 +44,16 @@
                                     <th>{{ $profile->id }}</th>
                                     <td>{{ \Str::limit($profile->name, 10) }}</td>
                                     <td>{{ \Str::limit($profile->gender, 10) }}</td>
-                                    <td>{{ \Str::limit($profile->hobby, 50) }}</td>
-                                    <td>{{ \Str::limit($profile->introduction, 150) }}</td>
+                                    <td>{{ \Str::limit($profile->hobby, 30) }}</td>
+                                    <td>{{ \Str::limit($profile->introduction, 100) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\Profilecontroller@edit', ['id' => $profile->id]) }}">編集</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('Admin\Profilecontroller@delete', ['id' => $profile->id]) }}">削除</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
