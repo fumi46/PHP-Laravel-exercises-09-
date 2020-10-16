@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\HTML;
 use App\Profile;
 
 class ProfileController extends Controller
-{   // 索引アクション
+{   // PHP19課題1 索引アクション
     public function index(Request $request)
     {
         $posts = Profile::all()->sortByDesc('updated_at'); //newsテーブルの全ての情報を取得して、投稿日時順に新しい方からに並べ換える。

@@ -44,4 +44,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'NewsController@index'); //トップページ（URLの後に何もつけない）にアクセスが来たら、NewsControllerのindexアクションへ移行。
 
-Route::get('/profile', 'ProfileController@index');
+Route::get('/profile', 'ProfileController@index');  //PHP19課題2
