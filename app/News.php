@@ -16,6 +16,6 @@ class News extends Model
     // History モデルとの関連付け
     public function histories()
     {
-        return $this->hasMany('App\History');  //Newsモデルが多くのモデルと関連している。Historyモデルはその内の一つ。
+        return $this->hasMany('App\History');  //Newsモデルに関連しているHistoryモデルの中の全てのテーブルを取得。
     }
 }
