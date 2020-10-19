@@ -22,8 +22,13 @@
                                <h1>{{ str_limit($headline->hobby, 30) }}</h1>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="hobby p-2">
+                               <h1>{{ str_limit($headline->home, 10) }}</h1>
+                            </div>
+                        </div>
                          <div class="col-md-6">
-                            <p class="introduction mx-auto">{{ str_limit($headline->introduction, 200) }}</p>
+                            <p class="introduction mx-auto">{{ str_limit($headline->introduction, 150) }}</p>
                         </div>
                     </div>
                 </div>
@@ -48,8 +53,11 @@
                                 <div class="hobby mt-3">
                                     {{ str_limit($post->hobby, 30) }}
                                 </div>
+                                 <div class="hobby mt-3">
+                                    {{ str_limit($post->home, 10) }}
+                                </div>
                                 <div class="introduction mt-3">
-                                    {{ str_limit($post->introduction, 200) }}
+                                    {{ str_limit($post->introduction, 150) }}
                                 </div>
                             </div>
                         </div>

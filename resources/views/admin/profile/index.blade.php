@@ -31,11 +31,12 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="10%">ID</th>
+                                <th width="5%">ID</th>
                                 <th width="10%">名前</th>
                                 <th width="10%">性別</th>
                                 <th width="20%">趣味</th>
-                                <th width="40%">自己紹介</th>
+                                <th width="10%">出身</th>
+                                <th width="30%">自己紹介</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,6 +46,7 @@
                                     <td>{{ \Str::limit($profile->name, 10) }}</td>
                                     <td>{{ \Str::limit($profile->gender, 10) }}</td>
                                     <td>{{ \Str::limit($profile->hobby, 30) }}</td>
+                                    <td>{{ \Str::limit($profile->home, 10) }}</td>
                                     <td>{{ \Str::limit($profile->introduction, 100) }}</td>
                                     <td>
                                         <div>

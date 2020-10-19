@@ -34,23 +34,29 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="gender">性別(gender)</label>
                         <div class="col-md-10">
-                            <!-- プルダウンのとき
+                            <!-- プルダウンのとき-->
                             　　<select type="text" class="form-control" name="gender">
-                                <option value="n" selected>未選択</option>
-                                <option value="f">女</option>
-                                <option value="m">男</option>
-                                </select>-->
+                                <option value="no choice" selected>未選択</option>
+                                <option value="female">女</option>
+                                <option value="male">男</option>
+                                </select>
                                 
-                            <!-- ボタン選択のとき -->
+                            <!-- ボタン選択のとき 
                                 <input id="no" name="gender" type="radio" value="no choice"><label for="no">選択しない</label>
                                 <input id="female" name="gender" type="radio" value="female"> <label for="female">女</label>
-                                <input id="male" name="gender" type="radio" value="male"> <label for="male">男</label>
+                                <input id="male" name="gender" type="radio" value="male"> <label for="male">男</label>-->
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="hobby">趣味(hobby)</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="hobby" value="{{ old('hobby') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="home">出身(hometown)</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="home" value="{{ old('home') }}">
                         </div>
                     </div>
                     <div class="form-group row">
