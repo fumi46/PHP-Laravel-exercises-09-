@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller; //controller.phpの呼び出し
 use App\News;  //Newsモデルの使用
 use App\History;  //Historyモデルの使用
 use Carbon\Carbon; 
-use Storage;
+//use Storage;
 
 class NewsController extends Controller  // news に関する物を作成する。
 {
@@ -29,10 +29,10 @@ class NewsController extends Controller  // news に関する物を作成する�
      // modelへの指示
      // フォームから画像が送信されてきたら($form に画像があれば)、保存して、$news->image_path に画像のパスを保存する
      if (isset($form['image'])) {                               // formに画像があれば保存。（issetメソッド = 引数の中にデータがあるかないかを判断する。）
-        //$path = $request->file('image')->store('public/image'); //画像をアップロードするメソッド。
-        $path = Storage::disk('s3')->putFile('/', $form['image'], 'public'); //AWS S3への画像のアップロード。
-        //$news->image_path = basename($path); //ハッシュ化されたファイル名を取得し、image_pathに代入。
-        $news->image_path = Storage::disk('s3')->url($path);  //AWS S3への画像の保存。
+        $path = $request->file('image')->store('public/image'); //画像をアップロードするメソッド。
+        //$path = Storage::disk('s3')->putFile('/', $form['image'], 'public'); //AWS S3への画像のアップロード。
+        $news->image_path = basename($path); //ハッシュ化されたファイル名を取得し、image_pathに代入。
+        //$news->image_path = Storage::disk('s3')->url($path);  //AWS S3への画像の保存。
       } else {
           $news->image_path = null;  //Newsテーブルの新しいレコードのimage_pathカラムにnullを代入。
       }
@@ -91,10 +91,10 @@ class NewsController extends Controller  // news に関する物を作成する�
       if ($request->remove == 'true') {                             //編集によって削除されたら
             $news_form['image_path'] = null;                          //送信された news_form の image_path に null に代入。
         } elseif ($request->file('image')) {                        //編集によって画像が添付されたら
-            //$path = $request->file('image')->store('public/image');   //画像のアップロード
-            $path = Storage::disk('s3')->putFile('/', $form['image'], 'public'); //AWS S3への画像のアップロード。
-            //$news_form['image_path'] = basename($path);               //ハッシュ化されたファイル名を取得し、image_pathに代入。
-            $news->image_path = Storage::disk('s3')->url($path);  //AWS S3への画像の保存。
+            $path = $request->file('image')->store('public/image');   //画像のアップロード
+            //$path = Storage::disk('s3')->putFile('/', $form['image'], 'public'); //AWS S3への画像のアップロード。
+            $news_form['image_path'] = basename($path);               //ハッシュ化されたファイル名を取得し、image_pathに代入。
+            //$news->image_path = Storage::disk('s3')->url($path);  //AWS S3への画像の保存。
         } else {                                                    //何も操作されないなら
             $news_form['image_path'] = $news->image_path;             //そのまま
         }
